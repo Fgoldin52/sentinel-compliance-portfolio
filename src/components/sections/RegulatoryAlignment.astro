@@ -1,0 +1,79 @@
+---
+const rows = [
+    {
+        citation: 'FFIEC BSA/AML Exam Manual',
+        title: 'Examination procedures for federal banking agencies',
+        alignment:
+            'Each detection rule maps to a section of the Manual. Examiners cite a section; investigators answer from the same one.',
+    },
+    {
+        citation: '31 CFR §1010.314 (FinCEN)',
+        title: 'Structuring of currency transactions',
+        alignment:
+            'Sub-CTR aggregate detection enforced via the versioned rule library — confidence-calibrated, tunable per segment.',
+    },
+    {
+        citation: 'SR 11-7 / OCC 2011-12',
+        title: 'Model risk management guidance',
+        alignment:
+            'Each model carries a versioned model card with lineage, independent validation, drift monitoring, and decommission plan.',
+    },
+    {
+        citation: 'OFAC SDN List & 50% Rule',
+        title: 'Sanctions screening + the 50% Rule',
+        alignment:
+            'Intraday sync from Treasury and commercial sources. Beneficial-ownership traversal applied automatically.',
+    },
+    {
+        citation: '31 CFR §1020.320 (FinCEN)',
+        title: 'Suspicious Activity Report filing',
+        alignment:
+            'SAR drafts auto-populated from the case audit trail. FinCEN BSA E-File compatible.',
+    },
+    {
+        citation: '31 CFR §1010.430 (FinCEN)',
+        title: 'Records retention (5 years)',
+        alignment:
+            '5-year retention enforced by default. Audit trail preserved across model versions and rule revisions.',
+    },
+];
+---
+
+<section aria-labelledby="reg-alignment-heading">
+    <div class="mx-auto max-w-[1280px] px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+        {/* Top hairline + oxblood eyebrow */}
+        <div class="border-t border-rule pt-4">
+            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-oxblood sm:text-xs">
+                On the examination
+            </p>
+        </div>
+
+        {/* H2 + italic sub-deck */}
+        <h2
+            id="reg-alignment-heading"
+            class="mt-10 font-serif font-medium text-ink text-3xl leading-[1.15] tracking-[-0.01em] text-balance sm:text-4xl lg:mt-12 lg:text-[2.75rem]"
+        >
+            Examiner&#8209;ready, by design.
+        </h2>
+        <p class="mt-4 max-w-[58ch] font-serif italic text-xl leading-[1.4] text-ink/75 text-balance sm:text-2xl">
+            Six anchor points in the regulatory canon &mdash; and how each lands in Sentinel.
+        </p>
+
+        {/* Typeset regulatory register */}
+        <div class="mt-16 sm:mt-20 lg:mt-24">
+            {rows.map((row) => (
+                <div class="grid grid-cols-1 gap-y-3 border-t border-rule py-7 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-0">
+                    <div class="font-mono text-xs uppercase tracking-wider text-ink lg:col-span-3 lg:pt-0.5">
+                        {row.citation}
+                    </div>
+                    <div class="font-serif text-[15px] leading-[1.4] text-ink text-balance sm:text-base lg:col-span-3 lg:pt-0.5">
+                        {row.title}
+                    </div>
+                    <div class="font-serif text-[15px] leading-[1.55] text-ink text-pretty sm:text-base lg:col-span-6">
+                        {row.alignment}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

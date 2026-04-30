@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/newsreader/wght-italic.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Treasury — editorial register for serious financial infrastructure.
+  Paper bg, near-black ink with a green undertone, deep oxblood accent
+  used sparingly. Hairline rules, minimal radii, generous whitespace.
+*/
+
+@theme inline {
+    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Newsreader Variable', ui-serif, Georgia, serif;
+    --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
+    --font-heading: var(--font-serif);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-rule: var(--rule);
+    --color-paper: var(--background);
+    --color-ink: var(--foreground);
+    --color-oxblood: var(--primary);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* Paper — warm off-white background */
+    --background: oklch(0.984 0.003 95);
+    /* Ink — near-black with a faint green-cyan undertone */
+    --foreground: oklch(0.18 0.008 175);
+
+    /* No card lift in Treasury; cards sit on paper, separated by hairlines */
+    --card: oklch(0.984 0.003 95);
+    --card-foreground: oklch(0.18 0.008 175);
+    --popover: oklch(0.984 0.003 95);
+    --popover-foreground: oklch(0.18 0.008 175);
+
+    /* Oxblood — primary accent, used sparingly for CTAs and key data */
+    --primary: oklch(0.405 0.115 33);
+    --primary-foreground: oklch(0.984 0.003 95);
+
+    /* Surface — a faintly inset paper tone for secondary blocks */
+    --secondary: oklch(0.965 0.005 90);
+    --secondary-foreground: oklch(0.18 0.008 175);
+
+    --muted: oklch(0.965 0.005 90);
+    --muted-foreground: oklch(0.46 0.008 165);
+
+    --accent: oklch(0.965 0.005 90);
+    --accent-foreground: oklch(0.18 0.008 175);
+
+    /* Destructive stays distinct from oxblood — errors aren't brand */
+    --destructive: oklch(0.55 0.21 27);
+
+    /* Hairline rules — charcoal at low alpha */
+    --rule: oklch(0.18 0.008 175 / 12%);
+    --border: oklch(0.18 0.008 175 / 12%);
+    --input: oklch(0.18 0.008 175 / 18%);
+    --ring: oklch(0.405 0.115 33);
+
+    /* Restrained chart palette — ink, oxblood, muted neutrals */
+    --chart-1: oklch(0.18 0.008 175);
+    --chart-2: oklch(0.405 0.115 33);
+    --chart-3: oklch(0.46 0.008 165);
+    --chart-4: oklch(0.65 0.04 165);
+    --chart-5: oklch(0.78 0.02 90);
+
+    /* Treasury favors near-square corners */
+    --radius: 0.25rem;
+
+    --sidebar: oklch(0.984 0.003 95);
+    --sidebar-foreground: oklch(0.18 0.008 175);
+    --sidebar-primary: oklch(0.405 0.115 33);
+    --sidebar-primary-foreground: oklch(0.984 0.003 95);
+    --sidebar-accent: oklch(0.965 0.005 90);
+    --sidebar-accent-foreground: oklch(0.18 0.008 175);
+    --sidebar-border: oklch(0.18 0.008 175 / 12%);
+    --sidebar-ring: oklch(0.405 0.115 33);
+}
+
+/*
+  Dark variant — Treasury is fundamentally a light-mode editorial design.
+  Dark mode is provided so shadcn components don't break, but it's not the
+  primary register for the marketing site.
+*/
+.dark {
+    --background: oklch(0.18 0.008 175);
+    --foreground: oklch(0.95 0.005 90);
+    --card: oklch(0.21 0.008 175);
+    --card-foreground: oklch(0.95 0.005 90);
+    --popover: oklch(0.21 0.008 175);
+    --popover-foreground: oklch(0.95 0.005 90);
+    --primary: oklch(0.62 0.13 33);
+    --primary-foreground: oklch(0.18 0.008 175);
+    --secondary: oklch(0.24 0.008 175);
+    --secondary-foreground: oklch(0.95 0.005 90);
+    --muted: oklch(0.24 0.008 175);
+    --muted-foreground: oklch(0.7 0.008 165);
+    --accent: oklch(0.24 0.008 175);
+    --accent-foreground: oklch(0.95 0.005 90);
+    --destructive: oklch(0.65 0.19 27);
+    --rule: oklch(0.95 0.005 90 / 14%);
+    --border: oklch(0.95 0.005 90 / 14%);
+    --input: oklch(0.95 0.005 90 / 18%);
+    --ring: oklch(0.62 0.13 33);
+    --chart-1: oklch(0.95 0.005 90);
+    --chart-2: oklch(0.62 0.13 33);
+    --chart-3: oklch(0.7 0.008 165);
+    --chart-4: oklch(0.55 0.04 165);
+    --chart-5: oklch(0.4 0.02 90);
+    --sidebar: oklch(0.21 0.008 175);
+    --sidebar-foreground: oklch(0.95 0.005 90);
+    --sidebar-primary: oklch(0.62 0.13 33);
+    --sidebar-primary-foreground: oklch(0.18 0.008 175);
+    --sidebar-accent: oklch(0.24 0.008 175);
+    --sidebar-accent-foreground: oklch(0.95 0.005 90);
+    --sidebar-border: oklch(0.95 0.005 90 / 14%);
+    --sidebar-ring: oklch(0.62 0.13 33);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    html {
+        @apply font-sans antialiased;
+        font-feature-settings: "ss01", "cv11";
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-serif;
+        font-feature-settings: "ss01";
+        text-wrap: balance;
+    }
+    /* Tabular lining numerals for data, IDs, citations */
+    .font-mono, code, kbd, samp {
+        font-feature-settings: "tnum", "lnum", "zero";
+    }
+}

@@ -1,0 +1,89 @@
+---
+const linkClass =
+    'underline-offset-4 hover:text-ink hover:underline';
+
+const product = [
+    { href: '/product/detection', label: 'Detection' },
+    { href: '/product/case-management', label: 'Investigation' },
+    { href: '/product/model-governance', label: 'Governance' },
+    { href: '/integrations', label: 'Integrations' },
+    { href: '/security', label: 'Security' },
+];
+
+const company = [
+    { href: '/company', label: 'About' },
+    { href: '/careers', label: 'Careers' },
+    { href: '/contact', label: 'Contact' },
+];
+
+const publications = [
+    { href: '/resources/field-guide', label: 'Field guide' },
+    { href: '/resources/behavioral-models', label: 'Technical papers' },
+    { href: '/resources/walkthrough', label: 'Walkthroughs' },
+];
+---
+
+<footer aria-label="Site footer">
+    <div class="mx-auto max-w-[1280px] px-6 pt-8 pb-8 sm:px-8 sm:pt-12 sm:pb-10 lg:px-12 lg:pt-16">
+        {/* Top band — institutional close + 3 nav columns */}
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-x-8">
+            {/* Institutional column */}
+            <div class="lg:col-span-5">
+                <p class="font-serif font-medium text-ink text-2xl sm:text-3xl">
+                    Sentinel Compliance
+                </p>
+                <p class="mt-3 max-w-[36ch] font-serif italic text-base leading-[1.5] text-ink/75 text-balance sm:text-lg">
+                    AML transaction monitoring, designed to be examined.
+                </p>
+            </div>
+
+            {/* Nav columns */}
+            <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:col-start-7 lg:col-span-6 lg:gap-x-8">
+                <div>
+                    <p class="mb-4 font-mono text-xs uppercase tracking-[0.14em] text-ink">
+                        Product
+                    </p>
+                    <ul class="space-y-2 font-serif text-[15px] leading-[1.5] text-ink/85 sm:text-base">
+                        {product.map((l) => (
+                            <li><a href={l.href} class={linkClass}>{l.label}</a></li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="mb-4 font-mono text-xs uppercase tracking-[0.14em] text-ink">
+                        Company
+                    </p>
+                    <ul class="space-y-2 font-serif text-[15px] leading-[1.5] text-ink/85 sm:text-base">
+                        {company.map((l) => (
+                            <li><a href={l.href} class={linkClass}>{l.label}</a></li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="mb-4 font-mono text-xs uppercase tracking-[0.14em] text-ink">
+                        Publications
+                    </p>
+                    <ul class="space-y-2 font-serif text-[15px] leading-[1.5] text-ink/85 sm:text-base">
+                        {publications.map((l) => (
+                            <li><a href={l.href} class={linkClass}>{l.label}</a></li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {/* Bottom band — hairline + legal */}
+        <div class="mt-16 border-t border-rule pt-6 sm:mt-20 sm:pt-8 lg:mt-24">
+            <div class="flex flex-col gap-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink/65 sm:flex-row sm:items-center sm:justify-between sm:text-xs">
+                <p>&copy; 2026 Sentinel Compliance, Inc.</p>
+                <ul class="flex flex-wrap gap-x-6 gap-y-2">
+                    <li><a href="/privacy" class="hover:text-ink">Privacy</a></li>
+                    <li><a href="/terms" class="hover:text-ink">Terms</a></li>
+                    <li><a href="/security/disclosure" class="hover:text-ink">Security disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

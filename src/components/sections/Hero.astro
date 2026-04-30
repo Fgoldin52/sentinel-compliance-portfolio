@@ -1,0 +1,113 @@
+---
+import { buttonVariants } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+---
+
+<section aria-labelledby="hero-heading">
+    {/* Editorial text block on paper */}
+    <div class="mx-auto max-w-[1280px] px-6 pt-20 pb-12 sm:px-8 sm:pt-28 sm:pb-16 lg:px-12 lg:pt-32 lg:pb-20">
+        <p class="mb-12 font-mono text-[11px] uppercase tracking-[0.14em] text-oxblood sm:mb-16 sm:text-xs">
+            For BSA teams at regional &amp; community banks
+        </p>
+
+        <h1
+            id="hero-heading"
+            class="font-serif font-medium text-ink text-[2.75rem] leading-[1.05] tracking-[-0.02em] max-w-[18ch] sm:text-6xl lg:text-[5rem]"
+        >
+            Transaction monitoring, rebuilt for mid-sized banks.
+        </h1>
+
+        <p class="mt-8 max-w-[42ch] text-lg leading-[1.55] text-ink/85 sm:text-xl">
+            Sentinel cuts alert volume 40&ndash;60% in 90 days &mdash;
+            without weakening the audit trail your examiners read first.
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+                href="/request-demo"
+                class={buttonVariants({ variant: 'default', className: 'h-11 px-6 text-sm rounded-sm' })}
+            >
+                Request a demo
+            </a>
+            <a
+                href="/product/detection"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-[6px] hover:underline"
+            >
+                See the detection engine
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+    </div>
+
+    {/* Full-bleed tinted band carrying the artifact */}
+    <div class="bg-secondary border-y border-rule">
+        <div class="mx-auto max-w-[1280px] px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+            <figure>
+                <figcaption class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-6">
+                    Example &mdash; Product UI
+                </figcaption>
+
+                <div
+                    role="img"
+                    aria-label="Illustrative alert review screen: customer Northbridge Holdings LLC flagged for structuring under the CTR threshold, risk score 4.7 of 5"
+                    class="max-w-2xl bg-paper border border-rule"
+                >
+                    <header class="flex items-center justify-between border-b border-rule px-5 py-3.5 sm:px-6">
+                        <div class="flex items-baseline gap-2 font-mono text-xs text-ink sm:text-sm">
+                            <span class="text-muted-foreground">ALERT</span>
+                            <span class="text-muted-foreground">·</span>
+                            <span>SCN-AML-2026-04-3147</span>
+                        </div>
+                        <Badge className="font-mono uppercase tracking-wider text-[10px] rounded-sm">Open</Badge>
+                    </header>
+
+                    <dl class="grid grid-cols-[7rem_1fr] gap-x-6 gap-y-3 px-5 py-5 text-sm sm:grid-cols-[8.5rem_1fr] sm:px-6 sm:py-6">
+                        <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground pt-0.5">Customer</dt>
+                        <dd class="text-ink">Northbridge Holdings LLC</dd>
+
+                        <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground pt-0.5">Account</dt>
+                        <dd class="text-ink">
+                            <span class="font-mono">••••-9842</span>
+                            <span class="ml-3 text-muted-foreground">Opened Nov 2024</span>
+                        </dd>
+
+                        <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground pt-0.5">Typology</dt>
+                        <dd class="text-ink">Structuring &middot; CTR avoidance</dd>
+
+                        <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground pt-0.5">Trigger</dt>
+                        <dd class="text-ink">9 wires, $69,400 total within 72 hours, each $7&ndash;9k</dd>
+
+                        <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground pt-0.5">Risk score</dt>
+                        <dd class="flex items-center gap-3 text-ink">
+                            <span class="font-mono">4.7 / 5.0</span>
+                            <span class="font-mono text-xs text-oxblood">&#9650; from 2.1</span>
+                        </dd>
+
+                        <dt class="font-mono text-xs uppercase tracking-wider text-muted-foreground pt-0.5">Reg basis</dt>
+                        <dd class="text-ink">
+                            <span class="font-mono text-[13px]">31 CFR §1010.314</span>
+                            <span class="ml-1 text-muted-foreground">(FinCEN)</span>
+                            <br />
+                            FFIEC BSA/AML Exam Manual
+                        </dd>
+                    </dl>
+
+                    <footer class="flex flex-wrap gap-3 border-t border-rule px-5 py-4 sm:px-6">
+                        <button
+                            type="button"
+                            class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-paper bg-ink transition-colors hover:bg-ink/90"
+                        >
+                            Escalate to BSA review
+                        </button>
+                        <button
+                            type="button"
+                            class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-ink border border-rule transition-colors hover:bg-secondary"
+                        >
+                            Mark cleared, document reason
+                        </button>
+                    </footer>
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>

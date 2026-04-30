@@ -1,0 +1,66 @@
+---
+// Separator: nbsp + middle dot + nbsp — keeps middle dot from breaking awkwardly
+const sep = ' · ';
+
+const categories = [
+    {
+        label: 'Core banking',
+        vendors: ['FIS', 'Fiserv', 'Jack Henry', 'Finastra'],
+    },
+    {
+        label: 'KYC & identity',
+        vendors: ['Alloy', 'Socure', 'Jumio', 'Trulioo'],
+    },
+    {
+        label: 'Sanctions & PEP',
+        vendors: [
+            'Refinitiv World-Check',
+            'Dow Jones Risk & Compliance',
+            'ComplyAdvantage',
+            'LexisNexis Bridger',
+        ],
+    },
+    {
+        label: 'Data & warehousing',
+        vendors: ['Snowflake', 'Databricks', 'Kafka', 'S3'],
+    },
+];
+---
+
+<section aria-labelledby="integrations-heading">
+    <div class="mx-auto max-w-[1280px] px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+        {/* Top hairline + oxblood eyebrow */}
+        <div class="border-t border-rule pt-4">
+            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-oxblood sm:text-xs">
+                On connecting
+            </p>
+        </div>
+
+        {/* H2 */}
+        <h2
+            id="integrations-heading"
+            class="mt-10 font-serif font-medium text-ink text-3xl leading-[1.15] tracking-[-0.01em] text-balance sm:text-4xl lg:mt-12 lg:text-[2.75rem]"
+        >
+            Sentinel speaks the systems your bank already runs.
+        </h2>
+
+        {/* Categorized vendor list */}
+        <div class="mt-16 space-y-10 sm:mt-20 sm:space-y-12 lg:mt-24">
+            {categories.map((cat) => (
+                <div>
+                    <p class="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-ink">
+                        {cat.label}
+                    </p>
+                    <p class="font-serif text-lg leading-[1.5] text-ink text-pretty sm:text-xl">
+                        {cat.vendors.join(sep)}
+                    </p>
+                </div>
+            ))}
+        </div>
+
+        {/* Closing line — addresses the "but my system isn't listed" concern */}
+        <p class="mt-16 font-serif italic text-xl leading-[1.4] text-ink sm:mt-20 sm:text-2xl lg:mt-24">
+            &mdash; and anything else, via SFTP or REST.
+        </p>
+    </div>
+</section>

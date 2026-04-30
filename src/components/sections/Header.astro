@@ -1,0 +1,25 @@
+---
+import { buttonVariants } from '@/components/ui/button';
+---
+
+<header>
+    <div class="mx-auto flex max-w-[1280px] items-center justify-between border-b border-rule px-6 py-4 sm:px-8 sm:py-5 lg:px-12">
+        {/* Wordmark — utility-scale (smaller than footer's masthead treatment) */}
+        <a
+            href="/"
+            class="font-serif font-medium text-ink text-lg leading-none underline-offset-4 hover:underline sm:text-xl"
+        >
+            Sentinel Compliance
+        </a>
+
+        {/* Primary CTA — same buttonVariants pattern as Hero/FinalCTA, responsive copy */}
+        <a
+            href="/request-demo"
+            class={buttonVariants({ variant: 'default', className: 'h-11 px-6 text-sm rounded-sm' })}
+        >
+            <span class="sm:hidden">Schedule</span>
+            <span class="hidden sm:inline">Schedule a walkthrough</span>
+            <span aria-hidden="true">&rarr;</span>
+        </a>
+    </div>
+</header>
