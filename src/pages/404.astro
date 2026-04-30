@@ -1,0 +1,47 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Footer from '@/components/sections/Footer.astro';
+---
+
+<Layout
+    title="Not built — Sentinel Compliance"
+    description="An editor's note. Sentinel Compliance is a fictional company built to demonstrate editorial design for B2B regtech. The homepage is fully composed; the inner pages are listed in the sitemap, not written in the source."
+>
+    <main id="main-content" tabindex="-1">
+        <section aria-labelledby="not-built-heading">
+            <div class="mx-auto max-w-[1280px] px-6 py-24 sm:px-8 sm:py-32 lg:px-12 lg:py-40">
+                {/* Top hairline + oxblood eyebrow */}
+                <div class="border-t border-rule pt-4">
+                    <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-oxblood sm:text-xs">
+                        An editor&rsquo;s note
+                    </p>
+                </div>
+
+                {/* H1 — page heading */}
+                <h1
+                    id="not-built-heading"
+                    class="mt-10 font-serif font-medium text-ink text-3xl leading-[1.15] tracking-[-0.01em] text-balance sm:text-4xl lg:mt-12 lg:text-[3rem]"
+                >
+                    This page exists in the sitemap, not the source.
+                </h1>
+
+                {/* Body */}
+                <p class="mt-6 max-w-[58ch] text-base leading-[1.6] text-ink text-pretty sm:mt-8 sm:text-[1.0625rem]">
+                    Sentinel Compliance is a fictional company built to demonstrate
+                    editorial design for B2B regtech. The homepage is fully composed;
+                    the inner pages are listed in the sitemap, not written in the source.
+                </p>
+
+                {/* Return link */}
+                <a
+                    href="/"
+                    class="mt-8 inline-flex items-center gap-1.5 text-base font-medium text-ink underline-offset-[6px] hover:underline sm:mt-10"
+                >
+                    Return to the homepage
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>
